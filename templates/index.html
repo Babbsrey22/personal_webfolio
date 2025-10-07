@@ -8,9 +8,13 @@
     <style>
         @font-face {
             font-family: 'Ruigslay';
-            src: url('../fonts/Ruigslay.ttf') format('truetype');
+            src: url("{{ url_for('static', filename='fonts/Ruigslay.ttf') }}") format('truetype');
             font-weight: normal;
             font-style: normal;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -25,7 +29,7 @@
             position: fixed;
             top: 20px;
             right: 40px;                  /* moves nav to top-right corner */
-            background-color: transparent;/* keep background clean */
+            background-color: transparent;
             z-index: 1000;
         }
 
@@ -61,6 +65,34 @@
             transform: scale(1.08);       /* slight zoom on hover */
         }
 
+        /* section scrolling format */
+        .section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(40px)
+        }
+
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #home {
+            background-color: #c4d6b0;
+        }
+
+        #profile {
+            background-color: #f0e4d7;
+        }
+
         h1#main-title {
             font-family: 'Ruigslay', serif;
             font-size: 80px;
@@ -81,11 +113,6 @@
             background-color: #58355e;
             margin: 10px auto 0;
             border-radius: 50px;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Section Headers */
@@ -109,6 +136,32 @@
             margin-bottom: 30px;
         }
 
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .scroll-btn {
+            text-decoration: none;
+            color: #58355e;
+            border: 2px solid #58355e;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-family: Georgia, serif;
+            font-size: 18px;
+            transition: all 0.25 ease;
+            background-color: transparent;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .scroll-btn:hover {
+            background-color: #58355e;
+            color: #c4d6b0;
+            transform: scale(1.08);
+        }
+
+        /* PROBLEM: works should redirect to another tab (same format as home page with nav bar) and SHOULD WORK! */
         .works-list {
             display: flex;
             justify-content: center;
@@ -138,7 +191,7 @@
             transform: scale(1.08);
         }
 
-        /* Fade-in animation for works */
+        /*Fade-in animation for works*/
         .works-list li {
             opacity: 0;
             transform: translateY(10px);
@@ -162,13 +215,33 @@
     <!-- Navbar -->
     <nav>
         <ul>
-            <li><a href="/profile">Profile</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#profile">Profile</a></li>
             <li><a href="/works">Works</a></li>
             <li><a href="/contact">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Works Section -->
+    <!-- Home section -->
+     <section id="home" class="section">
+        <p>Hello there, I am Eunice Q. Reyes!</p>
+        <h1 id="main-title">Welcome To My Portfolio</h1>
+        <p>Dive into my world</p>
+        <div style="text-align:center; margin-top: 20px">
+            <a href="#profile" class="scroll-btn">About Me</a>
+        </div>
+     </section>
+
+    <!-- Profile section -->
+    <!-- PROBLEM: update profile section to draft plan with profile pic, intro and desc, programming languages, and scroll-btn to works-->
+     <section id="profile" class="section">
+        <h1 class="section-title">Profile</h1>
+        <p>Hello! I'm Eunice Reyes, a Bachelor of Science in Computer Engineering (BSCPE) student currently enrolled in the Polytechnic University of the Philippines (PUP).
+            I am still exploring the world of programming and consider myself to be at beginner-intermediate level in Python and HTML.
+        </p>
+     </section>
+
+    <!-- works section// UNDER CONSTRUCTION-->
     <h1 class="section-title">My Works in Programming</h1>
     <p>Listed below are my ongoing projects in Data Structures and Algorithm</p>
 
@@ -178,6 +251,7 @@
         <li><a href="/areaOfTriangle">Area of a Triangle</a></li>
     </ul>
 
+    <script src="{{ url_for('static', filename='scroll.animate.js') }}"></script>
 </body>
 </html>
 
