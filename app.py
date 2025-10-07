@@ -14,9 +14,16 @@ def works():
         result = input_string.upper()
     return render_template('touppercase.html', result=result)
 
-@app.route('/areaOfcircle')
+@app.route('/areaOfcircle', methods=['GET', 'POST'])
 def area_of_a_circle():
-    return render_template('areaofacircle.html')
+    area = None
+    if request.method == "POST":
+        try:
+            radius = float(request.form['radius'])
+            area = 3.14159 * (radius ** 2)
+        except:
+            area = "Invalid input. Please enter a valid number ~"
+    return render_template('areaofacircle.html', area=area)
 
 @app.route('/areaOfTriangle')
 def area_of_a_triangle():
