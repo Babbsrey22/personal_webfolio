@@ -1,79 +1,159 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Great+Vibes&display=swap" rel="stylesheet">
+
     <style>
         body {
-            background-color: #381932;
-            font-family: monospace; /* change font size it's ugly asl */ 
-            font-size: 25px;
+            background-color: #c4d6b0;
+            font-family: 'Georgia', serif;
             margin: 0;
             padding: 0;
+            color: #58355e;
         }
 
         nav {
-            background-color: #461d3e;
-            padding: 10px;
-            text-align: center;
+            position: fixed;
+            top: 20px;
+            right: 40px;                  /* moves nav to top-right corner */
+            background-color: transparent;/* keep background clean */
+            z-index: 1000;
         }
 
         nav ul {
             list-style: none;
             margin: 0;
             padding: 0;
-            display: inline-flex;
+            display: flex;
             gap: 15px;
         }
 
-        nav ul li{
+        nav ul li {
             display: inline;
         }
 
         nav ul li a {
             text-decoration: none;
-            color: #381932;
-            background-color: #fff3e6;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: 0.3s;
+            color: #58355e;               
+            border: 2px solid #58355e;
+            padding: 8px 18px;
+            border-radius: 50px;          /* capsule shape */
+            font-family: 'Georgia', serif;
+            font-size: 18px;
+            transition: all 0.25s ease;   /* smooth transition for hover */
+            background-color: transparent;
+            display: inline-block;
+            transform: scale(1);          /* base size */
         }
 
         nav ul li a:hover {
-            background-color: #e4d0bb;
+            background-color: #58355e;
+            color: #c4d6b0;
+            transform: scale(1.08);       /* slight zoom on hover */
         }
 
-        ul li a {
-            text-decoration: none;
-            color: #381932;
-            background-color: #fff3e6;
-            padding: 8px 12px;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-
-        ul li a:hover {
-            background-color: #e4d0bb;
-        }
-
-        h1, p {
-            margin: 20px;
+        h1#main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 80px;
+            color: #58355e;
             text-align: center;
+            margin-top: 120px;
+            letter-spacing: 2px;
+            animation: fadeIn 1.5s ease-in-out;
+            position: relative;
         }
 
-        ul {
-            margin: 20px;
+        /* underline flourish for title */
+        h1#main-title::after {
+            content: "";
+            display: block;
+            width: 250px;
+            height: 3px;
+            background-color: #58355e;
+            margin: 10px auto 0;
+            border-radius: 50px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Section Headers */
+        h1.section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 600;
+            color: #58355e;
             text-align: center;
+            margin-top: 40px;
+            margin-bottom: 10px;
         }
 
-        ul li{
-            margin: 10px 0;
+        /* Paragraph Text */
+        p {
+            font-family: 'Georgia', serif;
+            font-size: 18px;
+            color: #58355e;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        .works-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 0;
+            margin: 30px auto;
             list-style: none;
+        }
+
+        .works-list a {
+            font-size: 16px;
+            padding: 10px 22px;
+            border-radius: 50px;
+            border: 2px solid #58355e;
+            color: #58355e;
+            background-color: transparent;
+            font-family: 'Georgia', serif;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            transform: scale(1);
+        }
+
+        .works-list a:hover {
+            background-color: #58355e;
+            color: #c4d6b0;
+            transform: scale(1.08);
+        }
+
+        /* Fade-in animation for works */
+        .works-list li {
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .works-list li:nth-child(2) { animation-delay: 0.2s; }
+        .works-list li:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body>
-    <h1 style="color: #fff3e6;">Eunice Q. Reyes</h1>
+    <h1 id="main-title">Welcome to my Portfolio</h1>
 
+    <!-- Navbar -->
     <nav>
         <ul>
             <li><a href="/profile">Profile</a></li>
@@ -82,15 +162,16 @@
         </ul>
     </nav>
 
+    <!-- Works Section -->
+    <h1 class="section-title">My Works in Programming</h1>
+    <p>Listed below are my ongoing projects in Data Structures and Algorithm</p>
 
-    <h1 style="color: #fff3e6;">My Works in Programming</h1>
-    <p style="color: #fff3e6;">Listed below are my ongoing projects in Data Structures and Algorithm</p>
-
-    <ul>
+    <ul class="works-list">
         <li><a href="/works">toUpperCase</a></li>
-        <li><a href="/areaOfcirle">Area of a Circle</a></li>
+        <li><a href="/areaOfcircle">Area of a Circle</a></li>
         <li><a href="/areaOfTriangle">Area of a Triangle</a></li>
     </ul>
+
 </body>
 </html>
 
