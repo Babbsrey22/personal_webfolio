@@ -25,9 +25,17 @@ def area_of_a_circle():
             area = "Invalid input. Please enter a valid number ~"
     return render_template('areaofacircle.html', area=area)
 
-@app.route('/areaOfTriangle')
+@app.route('/areaOfTriangle', methods=['GET', 'POST'])
 def area_of_a_triangle():
-    return render_template('areaofatriangle.html')
+    area = None
+    if request.method == "POST":
+        try:
+            base = float(request.form['base'])
+            height = float(request.form['height'])
+            area = 1/2 * base * height
+        except:
+            area = "Invalid input. Please enter a valid number ~"
+    return render_template('areaofatriangle.html', area=area)
 
 if __name__ == "__main__":
     app.run(debug=True)
