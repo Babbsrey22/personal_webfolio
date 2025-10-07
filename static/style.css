@@ -89,6 +89,20 @@ nav ul li a:hover {
 #contact {
     background-color: #f0e4d7;
 }
+ 
+/* --------- HEADERS AND PARAGRAPHS --------- */
+
+/* this does the cool minimalist aesthetic ahh fade in for all headers */ 
+h1 {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
 h1#main-title {
     font-family: 'Ruigslay', serif;
@@ -97,7 +111,6 @@ h1#main-title {
     text-align: center;
     margin-top: 10px;
     letter-spacing: 2px;
-    animation: fadeIn 1.5s ease-in-out;
     position: relative;
 }
 
@@ -105,7 +118,7 @@ h1#main-title {
 h1#main-title::after {
     content: "";
     display: block;
-    width: 250px;
+    width: 500px;
     height: 3px;
     background-color: #58355e;
     margin: 10px auto 0;
@@ -127,7 +140,7 @@ h1#section-title {
 h1#section-title::after {
     content: "";
     display: block;
-    width: 100px;
+    width: 500px;
     height: 3px;
     background-color: #58355e;
     margin: 10px auto 0;
@@ -145,10 +158,7 @@ p {
     max-width: 800px;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+/* ------ SCROLL BUTTON FLOURISH!! ------ */
 
 .scroll-btn {
     text-decoration: none;
@@ -170,7 +180,7 @@ p {
     transform: scale(1.08);
 }
 
-/* PFP ON LEFT HAND CORNERRR */
+/* ------ PFP ON LEFT HAND CORNERRR for profile ------- */
 .profile-container {
     display: flex;
     align-items: flex-start;
@@ -192,7 +202,7 @@ p {
     text-align: justify;
 }
 
-/* PROBLEM: works should redirect to another tab (same format as home page with nav bar) and SHOULD WORK! */
+/* shows the works */
 .works-list {
     display: flex;
     justify-content: center;
@@ -257,4 +267,51 @@ p {
     line-height: 1.6;
     margin: 0;
     word-wrap: break-word;
+}
+
+/* contact list buttons */
+.contact-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0;
+    margin: 30px auto;
+    list-style: none;
+}
+
+.contact-list a {
+    font-size: 16px;
+    padding: 10px 22px;
+    border-radius: 50px;
+    border: 2px solid #58355e;
+    color: #58355e;
+    background-color: transparent;
+    font-family: 'Georgia', serif;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    transform: scale(1);
+}
+
+.contact-list a:hover {
+    background-color: #58355e;
+    color: #c4d6b0;
+    transform: scale(2.50);
+}
+
+/*Fade-in animation for contacts*/
+.contact-list li {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.contact-list li:nth-child(2) { animation-delay: 0.2s; }
+.contact-list li:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
