@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/website_logo.png') }}">
+    <title>Eunice Q. Reyes - Home</title>
 
     <style>
         @font-face {
@@ -98,7 +99,7 @@
             font-size: 80px;
             color: #58355e;
             text-align: center;
-            margin-top: 120px;
+            margin-top: 10px;
             letter-spacing: 2px;
             animation: fadeIn 1.5s ease-in-out;
             position: relative;
@@ -210,14 +211,12 @@
     </style>
 </head>
 <body>
-    <h1 id="main-title">Welcome to my Portfolio</h1>
-
     <!-- Navbar -->
     <nav>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#profile">Profile</a></li>
-            <li><a href="/works">Works</a></li>
+            <li><a href="#works">Works</a></li>
             <li><a href="/contact">Contact</a></li>
         </ul>
     </nav>
