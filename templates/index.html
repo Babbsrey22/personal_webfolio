@@ -8,22 +8,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eunice Q. Reyes - Home</title>
-    <link rel="icon" href="{{ url_for('static', filename='images/website logo.png') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/logo_version2.png') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <!-- Navbar -->
+    <!-- Navbar at top right -->
     <nav>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#profile">Profile</a></li>
             <li><a href="#works">Works</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Home section -->
-     <section id="home" class="section">
+    <!-- Home/WELCOME section -->
+     <section id="home" class="section"> <!-- ALWAYS REMEMBER TO ENCASE BODY IN <SECTION>!! fatal mistake rip -->
         <p>Hello there, I am Eunice Q. Reyes!</p>
         <h1 id="main-title">Welcome To My Portfolio</h1>
         <p>Dive into my world</p>
@@ -33,23 +33,52 @@
      </section>
 
     <!-- Profile section -->
-    <!-- PROBLEM: update profile section to draft plan with profile pic, intro and desc, programming languages, and scroll-btn to works-->
-     <section id="profile" class="section">
-        <h1 class="section-title">Profile</h1>
-        <p>Hello! I'm Eunice Reyes, a Bachelor of Science in Computer Engineering (BSCPE) student currently enrolled in the Polytechnic University of the Philippines (PUP).
-            I am still exploring the world of programming and consider myself to be at beginner-intermediate level in Python and HTML.
-        </p>
-     </section>
+    <section id="profile" class="section">
+        <div class="profile-container">
+            <div class="profile-image">
+                <img src="{{ url_for('static', filename='images/mawilepfp.webp')}}" alt="My PFP">
+            </div>
+            <div class="profile-text">
+                <h1 id="section-title">Profile</h1>
+                <p>Hello! I'm Eunice Reyes, 
+                    a Bachelor of Science in Computer Engineering (BSCPE) student 
+                    currently enrolled in the Polytechnic University of the Philippines (PUP).
+                    I am still exploring the world of programming, 
+                    and consider myself to be at beginner-intermediate level in 
+                    Python and HTML
+                </p>
+                <p>My web portfolio shows my lab activities and projects
+                    for the subject of Data Structures and Algorithm (DSA).
+                    This webfolio is also subjected to changes in design and
+                    layout in the future, when I gain sufficient experience
+                    in using HTML and CSS with Flask (Python).
+                    Below are some programming languages I am familiar with,
+                    as well as some of my works related to DSA.
+                </p>
+                <div style="text-align:center; margin-top: 20px">
+                    <a href="#works" class="scroll-btn">View My Works</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- works section// UNDER CONSTRUCTION-->
-    <h1 class="section-title">My Works in Programming</h1>
-    <p>Listed below are my ongoing projects in Data Structures and Algorithm</p>
+    <section id="works" class="section">
+        <h1 class="section-title">My Works in Programming</h1>
+        <p>Listed below are my ongoing projects in Data Structures and Algorithm</p>
 
-    <ul class="works-list">
-        <li><a href="/works">toUpperCase</a></li>
-        <li><a href="/areaOfcircle">Area of a Circle</a></li>
-        <li><a href="/areaOfTriangle">Area of a Triangle</a></li>
-    </ul>
+        <ul class="works-list">
+            <li><a href="/works">toUpperCase</a></li>
+            <li><a href="/areaOfcircle">Area of a Circle</a></li>
+            <li><a href="/areaOfTriangle">Area of a Triangle</a></li>
+        </ul>
+    </section>
+
+    <!-- contact// UNDER CONSTRUCTION-->
+    <section id="contact" class="section">
+        <h1>Contact Me!</h1>
+        <p>Below are the ways you can contact me:</p>
+    </section>
 
     <script src="{{ url_for('static', filename='scroll.animate.js') }}"></script>
 </body>
