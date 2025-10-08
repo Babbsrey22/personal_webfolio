@@ -6,7 +6,7 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/works', methods=['GET', 'POST'])
+@app.route('/uppercase', methods=['GET', 'POST'])
 def works():
     result = None
     if request.method == 'POST':
@@ -14,7 +14,7 @@ def works():
         result = input_string.upper()
     return render_template('touppercase.html', result=result)
 
-@app.route('/areaOfcircle', methods=['GET', 'POST'])
+@app.route('/areacircle', methods=['GET', 'POST'])
 def area_of_a_circle():
     area = None
     if request.method == "POST":
@@ -25,7 +25,7 @@ def area_of_a_circle():
             area = "Invalid input. Please enter a valid number ~"
     return render_template('areaofacircle.html', area=area)
 
-@app.route('/areaOfTriangle', methods=['GET', 'POST'])
+@app.route('/areatriangle', methods=['GET', 'POST'])
 def area_of_a_triangle():
     area = None
     if request.method == "POST":
