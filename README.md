@@ -8,12 +8,19 @@ I also used a little bit of Javascript for the scrolling transition.
 ---
 
 ## 👽 Media Used 👽
-**Font used:**
-- [Ruigslay Serif](https://www.1001fonts.com/ruigslay-font.html)
-**Picture used**
-- [Mawile Fanart](https://www.newgrounds.com/art/view/backupmissingno/mawile)
-- Star Website icon (self-made on Canva)
-![Star Icon](static/images/logo_version2.png)
+
+### Font used:
+
+* [Ruigslay Serif](https://www.1001fonts.com/ruigslay-font.html)
+
+### Picture used
+
+* [Mawile Fanart](https://www.newgrounds.com/art/view/backupmissingno/mawile)
+* Star Website icon (self-made on Canva)
+
+<div align="center">
+    <img src="static/images/logo_version2.png" alt="Star Icon" width="100">
+  </div>
 
 ---
 
@@ -22,4 +29,3 @@ I also used a little bit of Javascript for the scrolling transition.
 ![Profile Page](static/images/profile_page.png)
 ![Works Page](static/images/works_page.png)
 ![Contacts Page](static/images/contact_page.png)
-![Webfolio Video](static/images/webfolio_preview.mp4)
