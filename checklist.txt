@@ -1,6 +1,6 @@
-1. make contact page nicer??
+1. make contact page nicer?? [DONE!!]
 2. add lab acts #1 and #2?
-3. change touppercase route from /works to /Uppercase
+3. change touppercase route from /works to /Uppercase [DONE!!!]
 4. update route/path/idk the name for it to make them uniform and easy to remember (e.g. /areaOfcircle -> /areacircle) [DONE!!!]
 5. add 'back to top' at the bottom if possible
-6. add a back button for each work if possible
+6. add a back button for each work if possibleS
