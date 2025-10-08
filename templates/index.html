@@ -1,0 +1,110 @@
+<!-- PERSONAL WEBFOILIO!! -->
+<!-- changes: moved style css to another html for ease -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eunice Q. Reyes - Home</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/logo_version2.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navbar at top right -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#works">Works</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home/WELCOME section -->
+     <section id="home" class="section"> <!-- ALWAYS REMEMBER TO ENCASE BODY IN <SECTION>!! fatal mistake rip -->
+        <p>Hello there, I am Eunice Q. Reyes!</p>
+        <h1 id="main-title">Welcome To My Portfolio</h1>
+        <p>Dive into my world</p>
+        <div style="text-align:center; margin-top: 20px">
+            <a href="#profile" class="scroll-btn">About Me</a>
+        </div>
+     </section>
+
+    <!-- Profile section -->
+    <section id="profile" class="section">
+        <div class="profile-container">
+            <div class="profile-image">
+                <img src="{{ url_for('static', filename='images/mawilepfp.webp')}}" alt="My PFP">
+            </div>
+            <img src="{{ url_for('static', filename='images/alakazamkins.gif') }}"
+            width="200"
+            alt="alakazamkins <3"
+
+            style="position: absolute; bottom: 150px; left: 500px;">
+            <img src="{{ url_for('static', filename='images/mawilenini.gif') }}"
+            width="220"
+            alt="mawilenini <3"
+            style="position: absolute; bottom: 150px; right: 500px;">
+
+            <div class="profile-text">
+                <h1 id="section-title">Profile</h1>
+                <p>Hello! I'm Eunice Reyes, 
+                    a Bachelor of Science in Computer Engineering (BSCPE) student 
+                    currently enrolled in the Polytechnic University of the Philippines (PUP).
+                </p>
+                <p>My favourite genres of music include pop punk, post-hardcore, nu metal, alternative metal, 
+                    progressive metal, and metalcore/emo. I enjoy drawing and
+                    I plan to keep up my YouTube channel featuring art stuff like art vlogs and
+                    speedpaints. My favourite Pokémon is Mawile (as shown in my profile picture).
+                </p>
+                <p>I am still exploring the world of programming, 
+                    and consider myself to be at beginner-intermediate level in 
+                    Python and HTML
+                </p>
+                <p>My web portfolio shows my lab activities and projects
+                    for the subject of Data Structures and Algorithm (DSA).
+                    This webfolio is also subjected to changes in design and
+                    layout in the future, when I gain sufficient experience
+                    in using HTML and CSS with Flask (Python).
+                    Below are some programming languages I am familiar with,
+                    as well as some of my works related to DSA.
+                </p>
+                <div style="text-align:center; margin-top: 20px">
+                    <a href="#works" class="scroll-btn">View My Works</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- works section -->
+    <section id="works" class="section">
+        <h1 id="section-title">My Works in Programming</h1>
+        <p>Listed below are my ongoing projects in Data Structures and Algorithm</p>
+
+        <ul class="works-list"> 
+            <!-- THIS IS WHERE I ADD MY FUTURE PROJECTS!!! 
+             and remind me to add my dsa lab acts #1 and #2 in here, 
+             written on 7 Oct 10pm-->
+            <li><a href="/uppercase">UpperCase</a></li>
+            <li><a href="/areacircle">Area of a Circle</a></li>
+            <li><a href="/areatriangle">Area of a Triangle</a></li>
+        </ul>
+    </section>
+
+    <!-- contact -->
+    <section id="contact" class="section">
+        <h1 id="section-title">Contact Me!</h1>
+        <p>Below are the ways you can find me:</p>
+        <ul class="contact-list">
+            <li><a href="https://github.com/Babbsrey22">GitHub (Babbsrey22)</a></li> <!-- REDIRECTS TO GITHUB YIPPEEE -->
+            <li><a href="mailto:euniceqreyes@iskolarngbayan.pup.edu.ph">PUP Webmail</a></li> <!-- opens email on click -->
+            <li><a title="0969 023 8742">Contact Information</a></li>
+        </ul>
+    </section>
+
+    <script src="{{ url_for('static', filename='scroll.animate.js') }}"></script>
+</body>
+</html>
+

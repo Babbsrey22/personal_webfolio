@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert String to Uppercase</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/logo_version2.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- working nav bars ahhaha -->
+    <nav>
+        <ul>
+            <li><a href="/#home">Home</a></li>
+            <li><a href="/#profile">Profile</a></li>
+            <li><a href="/#works">Works</a></li>
+            <li><a href="/#contact">Contact</a></li>
+
+        </ul>
+    </nav>
+    
+    <section id="areatriangle" class="section"> <!-- THIS IS IMPORTANT TO MATCH FORMAT OF MAIN !! -->
+        <h1 id="section-title">Area of a Triangle Calculator</h1>
+        <form method="POST" style="text-align: center; margin-top: 20px;">
+            <input type="number" step="any" name="base" placeholder="Enter the base" required>
+            <input type="number" step="any" name="height" placeholder="Enter the height" required>
+            <button type="submit">Calculate</button>
+        </form>
+
+        <!-- this part is important for the calculations mismo -->
+        {% if area %}
+        <p style="text-align: center; margin-top: 20px;">
+            Area: {{ area }}
+        </p>
+        {% endif %}
+        
+    </section>
+</body>
+</html>
