@@ -37,5 +37,14 @@ def area_of_a_triangle():
             area = "Invalid input. Please enter a valid number ~"
     return render_template('areaofatriangle.html', area=area)
 
+@app.route('/infixtopostfix', methods=['GET', 'POST'])
+def infix_to_postfix():
+    postfix = None
+    if request.method == "POST": # temporary placeholder
+        try:
+            pass
+        except:
+            pass
+
 if __name__ == "__main__":
     app.run(debug=True)
