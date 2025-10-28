@@ -19,10 +19,19 @@
         </ul>
     </nav>
     
-    <section id="infixtopostfix" class="section"> <!-- THIS IS IMPORTANT TO MATCH FORMAT OF MAIN !! -->
+    <section id="infixtopostfix" class="section">
         <h1 id="section-title">Infix to Postfix Converter</h1>
         <form method="POST" style="text-align: center; margin-top: 20px;">
-            <input type="number" step="any" name="infix" placeholder="Enter the Infix Expression" required>
-            <button type="submit">Convert</button>
+            <input type="text" step="any" name="infix" placeholder="Enter the Infix Expression" required>
+            <button type="submit">Convert to Postfix</button>
         </form>
-    
+
+        {% if postfix %}
+        <p style="text-align: center; margin-top: 20px;">
+            Postfix: {{ postfix }}
+        </p>
+        {% endif %}
+
+    </section>
+</body>
+</html>
